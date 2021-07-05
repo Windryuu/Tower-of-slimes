@@ -1,0 +1,3 @@
+<app-template-full-width>
+  <app-hero-combat [init]="item" *ngIf="item$ | async as item" (submited)="edit($event)"></app-hero-combat>
+</app-template-full-width>

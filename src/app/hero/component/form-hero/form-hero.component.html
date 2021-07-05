@@ -1,0 +1,49 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input type="text" id="name" class="form-control" formControlName="name">
+
+    <div *ngIf="form.controls['name'].invalid && form.controls['name'].touched">
+      champs invalides
+    </div>
+
+    <span>Invalid : {{form.controls['name'].invalid}}</span>
+    <span>valid : {{form.controls['name'].valid}}</span>
+    <span>touched : {{form.controls['name'].touched}}</span>
+    <span>untouched : {{form.controls['name'].untouched}}</span>
+    <span>pristine : {{form.controls['name'].pristine}}</span>
+    <span>dirty : {{form.controls['name'].dirty}}</span>
+  </div>
+
+  <div class="form-group">
+    <label for="HP">MaxHP:</label>
+    <input type="number" id="HP" class="form-control" formControlName="HP" (click)="calcHP()">
+  </div>
+
+  <div class="form-group">
+    <label for="Force">Force:</label>
+    <input type="number" id="Force" class="form-control" formControlName="Force" (click)="calcForce()">
+  </div>
+
+  <div class="form-group">
+    <label for="Intel">Intel:</label>
+    <input type="number" id="Intel" class="form-control" formControlName="Intel" (click)="calcIntel()">
+  </div>
+
+  <div class="form-group">
+    <label for="Def">Def:</label>
+    <input type="number" id="Def" class="form-control" formControlName="Def" (click)="calcDef()">
+  </div>
+
+  <div class="form-group">
+    <label for="Speed">Speed:</label>
+    <input type="number" id="Speed" class="form-control" formControlName="Speed" (click)="calcSpeed()">
+  </div>
+  <span>Gold : {{this.init.Gold }}</span>
+  <br>
+  <span>Points disponibles : {{this.init.AvailPoints }}</span>
+  <br>
+  <span>Nb monstre tués : {{this.init.killCount}}</span>
+  <br>
+  <button [disabled]="form.invalid" type="submit" class="btn btn-primary">Bweeeh</button>
+</form>

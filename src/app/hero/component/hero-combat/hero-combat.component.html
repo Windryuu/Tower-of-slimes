@@ -1,0 +1,96 @@
+<h1>Highscore : {{this.init.highscore}} - {{this.init.champion}}</h1>
+<div id="testFlex">
+  <app-template-full-width title="Hero" *ngIf="collection$ | async as collection">
+
+  <div id="willFlex">
+  <div id="subDiv">
+  <div id="heroSheet">
+
+    <ul *ngFor="let heroInfo of collection">
+      <app-icon-edit *ngIf="opnmodif" (click)="gotoEdit(heroInfo.id)"></app-icon-edit>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <span>Hero: {{heroInfo.name}}</span>
+        <br>
+        <span [ngStyle]="{'color':test}">HP: {{this.init.currentHP}} / {{this.init.HP}}</span>
+        <br>
+        <span>STR: {{this.init.Force}}</span>
+        <br>
+        <span>INT: {{this.init.Intel }}</span>
+        <br>
+        <span>DEF: {{this.init.Def}}</span>
+        <br>
+        <span>SPD: {{this.init.Speed }}</span>
+        <br>
+        <span [ngStyle]="{'color':goldColor,'font-size':goldScale}">Gold : {{this.init.Gold}}</span>
+        <br>
+        <span>Points disponibles : {{this.init.AvailPoints }}</span>
+        <br>
+        <span>Nb monstre tués : {{this.init.killCount}}</span>
+        <div id="btnFuite">
+        <div *ngIf="!willUpgrade">
+          <button  [disabled]="form.invalid || isEnemy" type="submit" class="btn btn-primary" (click)="openModif()">Améliorer</button>
+        </div>
+        <div *ngIf="isEnemy">
+          <button [disabled]="(enemyName === 'Dragon Ancestral' && this.enemyAtk > this.init.Def) || (enemyName === 'Dragon Ancestral' && this.init.Force > this.enemyDef) || this.init.currentHP == 0" class="btn btn-primary" (click)="runAway()">Fuir</button>
+        </div>
+        </div>
+        <div *ngIf="heroMort">
+          <button  [disabled]="form.invalid" type="submit" class="btn btn-primary" (click)="revive()">Revivre</button>
+        </div>
+      </form>
+    </ul>
+
+    </div>
+    <br>
+
+        <div id="buttonFight" *ngIf="!willUpgrade">
+          <button class="btn btn-primary" *ngIf="!isEnemy" (click)="generateEnemy()">Fight</button>
+        </div>
+        <div *ngIf="this.init.currentHP > 0">
+          <button class="btn btn-primary" [disabled]="!isEnemy" (click)="attack()">Attack</button>
+        </div>
+        <div>
+          <button class="btn btn-primary" [disabled]="this.init.currentHP == this.init.HP || this.init.currentHP == 0 || this.init.Gold < 20 || coupFatal" (click)="soinPotion()">Soin : Coût 20 Gold</button>
+        </div>
+  </div>
+
+  </div>
+
+ </app-template-full-width>
+ <app-template-full-width title="Shop">
+        <div *ngIf="this.init.killCount > 10" id="shop-potion">
+          <button [disabled]="this.init.Gold < costBoostPotion" (click)="forcePotion()" class="btn btn-primary">Force potion : {{costBoostPotion}} Gold</button>
+        </div>
+        <div *ngIf="this.init.killCount > 10" id="shop-potion">
+          <button [disabled]="this.init.Gold < costBoostPotion" (click)="intelPotion()" class="btn btn-primary">Intel potion : {{costBoostPotion}} Gold</button>
+        </div>
+        <div *ngIf="this.init.killCount > 10" id="shop-potion">
+          <button [disabled]="this.init.Gold < costBoostPotion" (click)="defPotion()" class="btn btn-primary">Def potion : {{costBoostPotion}} Gold</button>
+        </div>
+        <div *ngIf="this.init.killCount > 10" id="shop-potion">
+          <button [disabled]="this.init.Gold < costBoostPotion" (click)="speedPotion()" class="btn btn-primary">Speed potion : {{costBoostPotion}} Gold</button>
+        </div>
+ </app-template-full-width>
+ <app-template-full-width >
+  <app-template-full-width title="Enemy" *ngIf="collection2$ | async as collection2">
+
+      <div  id="enemySheet">
+        <ul *ngIf="isEnemy">
+          <li>Name: {{enemyName}}</li>
+          <li>HP: {{enemyCurrentHP}} / {{enemyCurrentMaxHP}}</li>
+          <li>STR: {{enemyAtk}}</li>
+          <li>INT: {{enemyInt }}</li>
+          <li>DEF: {{enemyDef}}</li>
+          <li>SPD: {{enemySpd }}</li>
+          <img id="dAncest" *ngIf="enemyName === 'Dragon Ancestral' " src="../../../../assets/img/dragonSlime.jpg" alt="">
+        </ul>
+      </div>
+
+  </app-template-full-width>
+</app-template-full-width>
+</div>
+<div id="logs">
+    <div *ngFor="let logs of fakeLogs">
+    <p>{{logs}}</p>
+    </div>
+  </div>

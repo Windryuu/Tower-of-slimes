@@ -1,0 +1,84 @@
+{
+  "hero": [
+    {
+      "name": "blblblbl",
+      "currentHP": 50,
+      "HP": 12,
+      "Force": 34,
+      "Intel": 1,
+      "Def": 31,
+      "Speed": 1,
+      "id": 1,
+      "AvailPoints": 8,
+      "Gold": 108,
+      "killCount": 11,
+      "highscore": 299,
+      "champion": "blblblbl"
+    }
+  ],
+  "enemy": [
+    {
+      "name": "Mu the Slime",
+      "HP": 25,
+      "Force": 3,
+      "Intel": 5,
+      "Def": 1,
+      "Speed": 1,
+      "id": 1
+    },
+    {
+      "name": "Mu the Def Slime",
+      "HP": 25,
+      "Force": 3,
+      "Intel": 5,
+      "Def": 6,
+      "Speed": 1,
+      "id": 2
+    },
+    {
+      "name": "Mu the Force Slime",
+      "HP": 25,
+      "Force": 8,
+      "Intel": 5,
+      "Def": 1,
+      "Speed": 1,
+      "id": 3
+    },
+    {
+      "name": "Mu the Int Slime",
+      "HP": 25,
+      "Force": 3,
+      "Intel": 10,
+      "Def": 1,
+      "Speed": 1,
+      "id": 4
+    },
+    {
+      "name": "Mu the Speed Slime",
+      "HP": 25,
+      "Force": 3,
+      "Intel": 5,
+      "Def": 1,
+      "Speed": 10,
+      "id": 5
+    },
+    {
+      "name": "Mu the Metallic Slime",
+      "HP": 50,
+      "Force": 7,
+      "Intel": 7,
+      "Def": 7,
+      "Speed": 7,
+      "id": 6
+    },
+    {
+      "name": "Dragon Ancestral",
+      "HP": 250,
+      "Force": 30,
+      "Intel": 50,
+      "Def": 15,
+      "Speed": 100,
+      "id": 7
+    }
+  ]
+}

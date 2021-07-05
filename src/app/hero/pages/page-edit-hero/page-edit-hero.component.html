@@ -1,0 +1,4 @@
+<app-template-full-width title="Hero Upgrade">
+  <app-form-hero [init]="item" *ngIf="item$ | async as item" (submited)="edit($event)"></app-form-hero>
+  <h2>Edit Wrosk</h2>
+</app-template-full-width>

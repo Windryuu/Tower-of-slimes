@@ -1,0 +1,79 @@
+#heroSheet{
+  border: 1px solid black;
+  width : 280px;
+  height: 280px;
+  margin: 20px;
+  padding: 20px;
+  box-shadow: 10px 5px 5px rgb(49, 35, 35);
+  transition: transform .4s;
+
+  ul {
+    li{
+      list-style-type: none;
+    }
+  }
+
+}
+
+#heroSheet:hover {
+  transform: scale(1.1)
+}
+
+#enemySheet{
+  border: 1px solid black;
+  width : 280px;
+  height: 280px;
+  margin: 20px;
+  padding: 20px;
+  box-shadow: 10px 5px 5px rgb(49, 35, 35);
+  transition: transform .4s;
+
+  ul {
+    li{
+      list-style-type: none;
+    }
+  }
+}
+
+#enemySheet:hover {
+  transform: scale(1.1)
+}
+
+
+#willFlex {
+  display: flex;
+  flex-direction: row;
+}
+
+#logs{
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  overflow-x: hidden;
+  overflow-y:auto;
+}
+
+#btnFuite{
+  display: flex;
+  flex-direction: row;
+}
+#testFlex {
+  display: flex;
+  flex-direction:row;
+  justify-content: space-around;
+
+
+}
+
+#shop-potion {
+  margin-top: 30px;
+  margin-bottom: 10px;
+
+}
+
+#dAncest {
+  width: 100px;
+  height: 100px;
+  z-index: 1000;
+
+}
